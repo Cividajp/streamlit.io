@@ -110,8 +110,8 @@ if needs_wakeup:
 
         if buttons:
             buttons[0].click()
-            print("检测到按钮，已点击。等待 45 秒完成恢复操作...")
-            time.sleep(45) # 点击后等待
+            print("检测到按钮，已点击。等待 60 秒完成恢复操作...")
+            time.sleep(60) # 点击后等待
             log_entry = f"[{timestamp}] [Selenium] 按钮已点击，已等待45秒完成\n"
         else:
             print("Selenium 未检测到按钮 (可能在轻量检查后刚被唤醒)。")
