@@ -2,8 +2,8 @@ name: Auto Click Streamlit
 
 on:
   schedule:
-    - cron: '0 */12 * * *'     # 每 12 小时自动运行
-  workflow_dispatch:           # 支持手动运行
+    - cron: '0 */12 * * *'    # 每 12 小时自动运行
+  workflow_dispatch:          # 支持手动运行
 
 jobs:
   clicker:
@@ -13,7 +13,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
       with:
-        persist-credentials: false  # 使用自定义 token 方式推送
+        persist-credentials: false # 使用自定义 token 方式推送
 
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -22,7 +22,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install selenium webdriver-manager
+        pip install selenium webdriver-manager requests # <-- 已在此处添加 requests
 
     - name: Run auto click script
       run: python auto_click.py
